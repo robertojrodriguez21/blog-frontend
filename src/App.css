@@ -13,10 +13,16 @@ nav {
   background-color: darkslategray;
   font-weight: 700;
   padding: 0 10px;
+  position: sticky;
+  top: 0;
 }
 
 .nav-link {
   padding: 20px;
+}
+
+.nav-link:hover {
+  background-color:rgb(35, 52, 52);
 }
 
 .nav-title {
