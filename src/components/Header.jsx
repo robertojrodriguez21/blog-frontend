@@ -1,20 +1,14 @@
-const Header = () => {
-  let loggedIn = false
+import { Link } from 'react-router-dom'
 
-  return !loggedIn ? (
+const Header = () => {
+
+  return(
     <>
     <div className="nav-link nav-title">BLOG</div>
-    <div className="nav-link right-align">LOGIN</div>
-    <div className="nav-link">REGISTER</div>
+    <Link className="nav-link right-align" to = '/Login'><div>LOGIN</div></Link>
+    <Link className="nav-link" to = '/Register'> <div>REGISTER</div></Link>
     </>
-  ) : (
-    <>
-    <div className="nav-link nav-title">BLOG</div>
-    <div className="nav-link">FEED</div>
-    <div className="nav-link">ADD POST</div>
-    <div className="nav-link right-align">Welcome back USER</div>
-    </>
-  )
+  ) 
 }
 
 export default Header
