@@ -23,6 +23,7 @@ nav {
 
 .nav-link:hover {
   background-color:rgb(35, 52, 52);
+  cursor: pointer;
 }
 
 .nav-title {
