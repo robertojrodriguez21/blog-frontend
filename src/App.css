@@ -6,6 +6,14 @@ html {
   background-color: dimgray;
   color: white;
 }
+button {
+cursor: pointer;
+}
+
+.form-format{
+  display: inline-grid;
+}
+
 
 /* Nav Bar */
 nav {
