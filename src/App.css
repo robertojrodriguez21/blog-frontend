@@ -43,3 +43,34 @@ nav {
 .right-align {
   margin-left: auto;
 }
+
+/* Create Post */
+.create-post-form {
+  background-color: rgb(42, 96, 96);
+  padding: 10px;
+}
+
+.create-post-title {
+  background-color: darkslategray;
+  font-size: 40px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.create-post {
+  width: 40%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Links and Buttons */
+a, button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Buttons */
+.create-post-button {
+  background-color: darkslategray;
+  padding: 10px;
+}
