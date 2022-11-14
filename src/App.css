@@ -44,23 +44,25 @@ nav {
   margin-left: auto;
 }
 
-/* Create Post */
-.create-post-form {
+/* Center */
+.create-post, .register, .login {
+  width: 40%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Form Backgrounds */
+.create-post-form, .register-form, .login-form {
   background-color: rgb(42, 96, 96);
   padding: 10px;
 }
 
-.create-post-title {
+/* Form Titles */
+.create-post-title, .register-title, .login-title {
   background-color: darkslategray;
   font-size: 40px;
   font-weight: 700;
   padding: 10px;
-}
-
-.create-post {
-  width: 40%;
-  margin: auto;
-  padding: 20px 0;
 }
 
 /* Links and Buttons */
@@ -70,7 +72,8 @@ a, button {
 }
 
 /* Buttons */
-.create-post-button {
+/* Create/Add Button */
+.create-post-button, .register-button, .login-button {
   background-color: darkslategray;
   padding: 10px;
 }

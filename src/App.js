@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Login from './components/Login'
 import Register from './components/Register'
 import { Route, Routes } from 'react-router-dom'
+import CreatePost from './components/CreatePost'
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/createPost" element={<CreatePost />} />
         </Routes>
       </main>
     </div>
