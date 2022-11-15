@@ -57,17 +57,17 @@ function App() {
     toggleAuthenticated(true)
   }
 
-  // const apiCall = async () => {
-  //   let response = await axios.get(`${BASE_URL}/postcomment/`)
-  //   setPostsComments(response.data)
-  // }
-  // apiCall()
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
+
+    const apiCall = async () => {
+      let response = await axios.get(`${BASE_URL}/postcomment/`)
+      setPostsComments(response.data)
+    }
+    apiCall()
   }, [])
 
   // useEffect(() => {
