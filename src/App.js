@@ -24,24 +24,30 @@ function App() {
   }, [])
 
   const [posts, setPosts] = useState([])
-  const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
+  const [post, setPost] = useState({ title: '', body: '', image: '' })
   const [input, setInput] = useState('')
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
-  const handlePostChange = (event) => {
-    setNewPost({ ...newPost, [event.target.name]: event.target.value })
+  const handleChange = (event) => {
+    setPost({ ...post, [event.target.name]: event.target.value })
   }
   const handlePost = () => {
     let post = input
-    setNewPost(post)
-    setPosts(...posts, newPost)
+    setPost(post)
+    setPosts(...posts, post)
     setInput('')
   }
-  const handleDelete = (index) => {
+  const handleDelete = async (id, index) => {
+    id.preventDefault()
+    await axios.delete(`http://localhost:3001/${id}`, post)
     let post = [...posts]
     post.splice(index, 1)
     setPosts(post)
+  }
+  const handleEdit = async (id) => {
+    let newPost = await axios.put(`http://localhost:3001/${id}`, post)
+    setPosts([...posts], newPost.data)
   }
 
   // const checkToken = async () => {
@@ -81,14 +87,24 @@ function App() {
             path="/createPost"
             element={
               <CreatePost
-                handlePostChange={handlePostChange}
+                handlePostChange={handleChange}
                 handlePost={handlePost}
-                newPost={newPost}
+                newPost={post}
                 input={input}
               />
             }
           />
-          <Route path="/editPost" element={<EditPost />} />
+          <Route
+            path="/editPost"
+            element={
+              <EditPost
+                handleChange={handleChange}
+                handleEdit={handleEdit}
+                post={post}
+                input={input}
+              />
+            }
+          />
           <Route path="/feed" element={<Feed handleDelete={handleDelete} />} />
         </Routes>
       </main>
