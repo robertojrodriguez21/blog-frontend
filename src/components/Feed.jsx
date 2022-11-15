@@ -1,11 +1,12 @@
 import Post from './Post'
 
 const Feed = (props) => {
+    const postsComments = props.postsComments
     return(
         <div>
             <div>FEED</div>
-            {props.posts.map((post) => (
-                <Post post={post} />
+            {postsComments.map((postComments) => (
+                <Post postComments={postComments} />
             ))}
         </div>
     )

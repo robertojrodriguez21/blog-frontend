@@ -14,7 +14,7 @@ import { CheckSession } from './services/Auth'
 const BASE_URL = 'http://localhost:3001/blog'
 
 function App() {
-  const [posts, setPosts] = useState([])
+  const [postsComments, setPostsComments] = useState([])
   const [post, setPost] = useState({ title: '', body: '', image: '' })
   const [input, setInput] = useState('')
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -26,19 +26,19 @@ function App() {
   const handlePost = () => {
     let post = input
     setPost(post)
-    setPosts(...posts, post)
+    setPostsComments(...postsComments, post)
     setInput('')
   }
   const handleDelete = async (id, index) => {
     id.preventDefault()
     await axios.delete(`http://localhost:3001/${id}`, post)
-    let post = [...posts]
+    let post = [...postsComments]
     post.splice(index, 1)
-    setPosts(post)
+    setPostsComments(post)
   }
   const handleEdit = async (id) => {
     let newPost = await axios.put(`http://localhost:3001/${id}`, post)
-    setPosts([...posts], newPost.data)
+    setPostsComments([...postsComments], newPost.data)
   }
 
   const checkToken = async () => {
@@ -56,9 +56,9 @@ function App() {
 
   useEffect(() => {
     const apiCall = async () => {
-      let postResponse = await axios.get(`${BASE_URL}/post/`)
-      setPosts(postResponse.data)
-      console.log(posts)
+      let response = await axios.get(`${BASE_URL}/postcomment/`)
+      setPostsComments(response.data)
+      console.log(response.data)
     }
 
     apiCall()
@@ -105,7 +105,15 @@ function App() {
               />
             }
           />
-          <Route path="/feed" element={<Feed handleDelete={handleDelete} />} />
+          <Route
+            path="/feed"
+            element={
+              <Feed
+                //handleDelete={handleDelete}
+                postsComments={postsComments}
+              />
+            }
+          />
         </Routes>
       </main>
     </div>
