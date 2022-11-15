@@ -1,7 +1,7 @@
 const EditPost = (props) => {
     const post = props.post
     return(
-        <div className="edit-post">
+        <div className="edit-post"> 
             <div className="edit-post-title">Edit Post</div>
             <form className='edit-post-form' onSubmit={props.handleEdit}>
                 <label>Edit Post Name: </label>
