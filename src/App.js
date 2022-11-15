@@ -52,9 +52,16 @@ function App() {
 
   const checkToken = async () => {
     const user = await CheckSession()
+    console.log(user, 'this is the user in the check token function')
     setUser(user)
     toggleAuthenticated(true)
   }
+
+  // const apiCall = async () => {
+  //   let response = await axios.get(`${BASE_URL}/postcomment/`)
+  //   setPostsComments(response.data)
+  // }
+  // apiCall()
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -63,14 +70,9 @@ function App() {
     }
   }, [])
 
-  useEffect(() => {
-    const apiCall = async () => {
-      let response = await axios.get(`${BASE_URL}/postcomment/`)
-      setPostsComments(response.data)
-    }
+  // useEffect(() => {
 
-    apiCall()
-  }, [])
+  // }, [])
 
   return (
     <div className="App">
