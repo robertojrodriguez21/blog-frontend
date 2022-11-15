@@ -47,7 +47,11 @@ nav {
 }
 
 /* Form Backgrounds */
-.create-post-form, .register-form, .login-form, .home-form, .edit-post-form {
+.create-post-form, .register-form, .login-form, .home-form {
+  display:grid;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(42, 96, 96);
   padding: 10px;
 }

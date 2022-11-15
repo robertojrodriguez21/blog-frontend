@@ -1,5 +1,6 @@
 import {useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { RegisterUser } from '../services/Auth'
 
 
 
@@ -22,6 +23,23 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        await RegisterUser({
+            firstName: formValues.firstName,
+            lastName: formValues.lastName,
+            email: formValues.email,
+            password: formValues.password,
+            verifyPassword: formValues.verifyPassword,
+            location: formValues.location
+        })
+
+        setFormValues({
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            verifyPassword: '',
+            location: ''
+        })
         navigate('/login')
     }
 
@@ -47,7 +65,7 @@ const Register = () => {
                     value={formValues.lastName}
                     required/>
                 <br></br><br></br>
-                <label> Enter Email Address: </label>
+                <label> Email Address: </label>
                 <input
                     onChange={handleChange}
                     name="email"
@@ -56,7 +74,7 @@ const Register = () => {
                     value={formValues.email}
                     required/>
                 <br></br><br></br>
-                <label> Enter Password: </label>
+                <label> Password: </label>
                 <input
                     onChange={handleChange}
                     name="password"
