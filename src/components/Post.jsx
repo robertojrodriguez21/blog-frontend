@@ -14,7 +14,7 @@ const Post = (props) => {
             <div className="post-title">{postComments.title}</div>
             <div className="post-body">{postComments.body}</div>
             {postComments.associated_comments.map((comment) => (
-                <Comment comment={comment} />
+                <Comment key={comment.id} comment={comment} />
             ))}
             {/* Add code for user to add a comment here */}
         </div>

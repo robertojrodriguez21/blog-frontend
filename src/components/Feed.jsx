@@ -6,7 +6,7 @@ const Feed = (props) => {
         <div>
             <div>FEED</div>
             {postsComments.map((postComments) => (
-                <Post postComments={postComments} />
+                <Post key={postComments.id} postComments={postComments} />
             ))}
         </div>
     )
