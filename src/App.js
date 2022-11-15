@@ -10,6 +10,7 @@ import EditPost from './components/EditPost'
 import Feed from './components/Feed'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
+import Post from './components/Post'
 
 const BASE_URL = 'http://localhost:3001/blog'
 
@@ -58,7 +59,6 @@ function App() {
     const apiCall = async () => {
       let response = await axios.get(`${BASE_URL}/postcomment/`)
       setPostsComments(response.data)
-      console.log(response.data)
     }
 
     apiCall()
@@ -107,13 +107,9 @@ function App() {
           />
           <Route
             path="/feed"
-            element={
-              <Feed
-                //handleDelete={handleDelete}
-                postsComments={postsComments}
-              />
-            }
+            element={<Feed postsComments={postsComments} />}
           />
+          <Route path="/post" element={<Post handleDelete={handleDelete} />} />
         </Routes>
       </main>
     </div>
