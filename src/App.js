@@ -9,20 +9,11 @@ import { useEffect, useState } from 'react'
 import EditPost from './components/EditPost'
 import Feed from './components/Feed'
 import axios from 'axios'
+import { CheckSession } from './services/Auth'
 
 const BASE_URL = 'http://localhost:3001/blog'
 
 function App() {
-  useEffect(() => {
-    const apiCall = async () => {
-      let postResponse = await axios.get(`${BASE_URL}/post/`)
-      setPosts(postResponse.data)
-      console.log(posts)
-    }
-
-    apiCall()
-  }, [])
-
   const [posts, setPosts] = useState([])
   const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
   const [input, setInput] = useState('')
@@ -44,19 +35,28 @@ function App() {
     setPosts(post)
   }
 
-  // const checkToken = async () => {
-  //   const user = await CheckSession()
-  //   setUser(user)
-  //   toggleAuthenticated(true)
-  // }
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+  }
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token')
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
 
-  //   if (token) {
-  //     checkToken()
-  //   }
-  // }, [])
+  useEffect(() => {
+    const apiCall = async () => {
+      let postResponse = await axios.get(`${BASE_URL}/post/`)
+      setPosts(postResponse.data)
+      console.log(posts)
+    }
+
+    apiCall()
+  }, [])
 
   return (
     <div className="App">
