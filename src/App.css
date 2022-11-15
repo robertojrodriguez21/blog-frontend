@@ -72,3 +72,19 @@ a, button {
   background-color: darkslategray;
   padding: 10px;
 }
+
+.delete-button {
+  background-color: darkred;
+  padding: 5px;
+  font-weight: 900;
+  width: 20px;
+  height: 20px;
+}
+
+.edit-button {
+  background-color: darkorange;
+  padding: 5px;
+  font-weight: 900;
+  width: 20px;
+  height: 20px;
+}
