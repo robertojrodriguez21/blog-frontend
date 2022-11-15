@@ -30,6 +30,13 @@ function App() {
     setPostsComments(...postsComments, post)
     setInput('')
   }
+
+  const handleLogOut = () => {
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
   const handleDelete = async (id, index) => {
     id.preventDefault()
     await axios.delete(`http://localhost:3001/${id}`, post)
@@ -37,6 +44,7 @@ function App() {
     post.splice(index, 1)
     setPostsComments(post)
   }
+
   const handleEdit = async (id) => {
     let newPost = await axios.put(`http://localhost:3001/${id}`, post)
     setPostsComments([...postsComments], newPost.data)
@@ -67,7 +75,11 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Header />
+        <Header
+          user={user}
+          authenticated={authenticated}
+          handleLogOut={handleLogOut}
+        />
       </nav>
 
       <main>
@@ -107,7 +119,14 @@ function App() {
           />
           <Route
             path="/feed"
-            element={<Feed postsComments={postsComments} />}
+            element={
+              <Feed
+                handleDelete={handleDelete}
+                postsComments={postsComments}
+                authenticated={authenticated}
+                user={user}
+              />
+            }
           />
           <Route path="/post" element={<Post handleDelete={handleDelete} />} />
         </Routes>
