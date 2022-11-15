@@ -47,6 +47,12 @@ function App() {
     toggleAuthenticated(true)
   }
 
+  const handleLogOut = () => {
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -67,7 +73,11 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Header />
+        <Header
+          user={user}
+          authenticated={authenticated}
+          handleLogOut={handleLogOut}
+        />
       </nav>
 
       <main>
