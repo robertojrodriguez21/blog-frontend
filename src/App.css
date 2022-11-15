@@ -48,6 +48,10 @@ nav {
 
 /* Form Backgrounds */
 .create-post-form, .register-form, .login-form, .home-form {
+  display:grid;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(42, 96, 96);
   padding: 10px;
 }
