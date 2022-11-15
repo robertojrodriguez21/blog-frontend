@@ -2,7 +2,7 @@
 
 ## Due Date: 18 November 2022
 
-### By: Erwin, Ortiz, Roberto Rodriguez, Edward Yuabov, and Kyle Davis
+### By: Erwin Ortiz, Roberto Rodriguez, Edward Yuabov, and Kyle Davis
 
 ## **_Description_**
 
