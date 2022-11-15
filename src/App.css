@@ -10,11 +10,6 @@ button {
 cursor: pointer;
 }
 
-.form-format{
-  display: inline-grid;
-}
-
-
 /* Nav Bar */
 nav {
   display: flex;
@@ -45,20 +40,20 @@ nav {
 }
 
 /* Center */
-.create-post, .register, .login {
+.create-post, .register, .login, .home {
   width: 40%;
   margin: auto;
   padding: 20px 0;
 }
 
 /* Form Backgrounds */
-.create-post-form, .register-form, .login-form {
+.create-post-form, .register-form, .login-form, .home-form {
   background-color: rgb(42, 96, 96);
   padding: 10px;
 }
 
 /* Form Titles */
-.create-post-title, .register-title, .login-title {
+.create-post-title, .register-title, .login-title, .home-title {
   background-color: darkslategray;
   font-size: 40px;
   font-weight: 700;
@@ -73,7 +68,7 @@ a, button {
 
 /* Buttons */
 /* Create/Add Button */
-.create-post-button, .register-button, .login-button {
+.create-post-button, .register-button, .login-button, .home-button {
   background-color: darkslategray;
   padding: 10px;
 }

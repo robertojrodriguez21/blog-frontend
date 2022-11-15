@@ -1,7 +1,6 @@
 const EditPost = () => {
     return(
         <div>
-
         </div>
     )
 }
