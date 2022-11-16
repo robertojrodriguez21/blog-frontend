@@ -14,12 +14,12 @@ const Post = (props) => {
 
     const createComment = async (e) => {
         e.preventDefault()
+        let completeComment = props.user.firstName + ' ' + props.user.lastName + ': ' + newComment.comment
         const createdComment = {
-            comment: newComment.comment,
+            comment: completeComment,
             userId: props.user.id,
             postId: postComments.id
         }
-        console.log(createdComment)
         await axios.post(`${props.BASE_URL}/comment/create`, createdComment)
 
         setNewComment({ comment: '' })
@@ -69,7 +69,7 @@ const Post = (props) => {
             <div><img className="post-image" src={postComments.image} alt={postComments.title} ></img></div>
             <div className="comments-title">Comments</div>
             {postComments.associated_comments.map((comment) => (
-                <Comment key={comment.id} comment={comment} />
+                <Comment key={comment.id} comment={comment} user={props.user}/>
             ))}
             <div className="comment-form">
             <form onSubmit={handleSubmit}>
