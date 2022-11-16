@@ -62,6 +62,7 @@ function App() {
 
   const checkToken = async () => {
     const user = await CheckSession()
+    console.log(user, 'this is the user in the check token function')
     setUser(user)
     toggleAuthenticated(true)
   }
@@ -71,18 +72,16 @@ function App() {
     if (token) {
       checkToken()
     }
-  }, [])
 
-  useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get(`${BASE_URL}/postcomment/`)
       setPostsComments(response.data)
     }
-
     apiCall()
   }, [])
 
   return user && authenticated ? (
+
     <div className="App">
       <nav>
         <Header
