@@ -1,15 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const Home = () => {
+  let navigate = useNavigate()
   return (
     <div className="home">
-        <div className="home-title">ROUTES</div>    
-        <div className="home-form">  
-        <Link to = '/createPost'><button className="home-button">Create Post</button></Link>
-        <br/>
-        <br/>
-        <Link to = '/editPost'><button className="home-button">Edit Post</button></Link>
-      </div>
+        <div className="protected">
+          <h3>Oops! You must be logged in to do that!</h3>
+          <button className='login-button' onClick={() => navigate('/login')}>Log In</button>
+          <div className='home-divider'>or</div>
+          <button className='register-button' onClick={() => navigate('/register')}>Register</button>
+        </div>
 
     </div>
   )

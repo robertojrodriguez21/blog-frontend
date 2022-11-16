@@ -17,7 +17,6 @@ const BASE_URL = 'http://localhost:3001/blog'
 function App() {
   const [postsComments, setPostsComments] = useState([])
   const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
-  const [input, setInput] = useState('')
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
@@ -37,13 +36,9 @@ function App() {
       ...newPost,
       userId: user.id
     }
-    console.log(createdPost)
-
     await axios.post(`${BASE_URL}/post/create`, createdPost)
 
     setNewPost({ title: '', body: '', image: '' })
-
-    window.location.reload(false)
   }
 
   const handleLogOut = () => {
@@ -85,11 +80,8 @@ function App() {
     apiCall()
   }, [])
 
-  // useEffect(() => {
+  return user && authenticated ? (
 
-  // }, [])
-
-  return (
     <div className="App">
       <nav>
         <Header
@@ -101,7 +93,6 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route
             path="/login"
             element={
@@ -119,7 +110,6 @@ function App() {
                 handlePostChange={handleChange}
                 createPost={createPost}
                 newPost={newPost}
-                input={input}
               />
             }
           />
@@ -130,12 +120,11 @@ function App() {
                 handleChange={handleChange}
                 handleEdit={handleEdit}
                 post={newPost}
-                input={input}
               />
             }
           />
           <Route
-            path="/feed"
+            path="/"
             element={
               <Feed
                 handleDelete={handleDelete}
@@ -145,6 +134,35 @@ function App() {
               />
             }
           />
+          <Route path="/post" element={<Post handleDelete={handleDelete} />} />
+        </Routes>
+      </main>
+    </div>
+  ) : (
+    <div className="App">
+      <nav>
+        <Header
+          user={user}
+          authenticated={authenticated}
+          handleLogOut={handleLogOut}
+        />
+      </nav>
+
+      <main>
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              <Login
+                setUser={setUser}
+                toggleAuthenticated={toggleAuthenticated}
+              />
+            }
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/createPost" element={<Home />} />
+          <Route path="/editPost" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/post" element={<Post handleDelete={handleDelete} />} />
         </Routes>
       </main>
