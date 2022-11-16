@@ -37,7 +37,7 @@ const CreatePost = (props) => {
                 <input required type='text' value={newPost.title} onChange={handleChange} name={'title'}></input>
                 <br></br><br></br>
                 <label>Post: </label>
-                <input required className="create-post-textarea" type='text' value={newPost.body} onChange={handleChange} name={'body'}></input>
+                <input required type='text' value={newPost.body} onChange={handleChange} name={'body'}></input>
                 <br></br><br></br>
                 <label>Post Image Link: </label>
                 <input type='text' value={newPost.image} onChange={handleChange} name={'image'} placeholder={'Optional'}></input>
