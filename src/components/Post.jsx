@@ -48,13 +48,11 @@ const Post = (props) => {
 
     if (props.user) {
         titleBar = (
-            <>
             <div className="post-title-bar">
                 <div><button className="delete-button" onClick={handleDelete}>X</button></div>
                 <div><button className="edit-button" onClick={handleEdit}>✎</button></div>
                 <div className="post-title">{postComments.title}</div>
             </div>
-            </>
         )
     }
 
@@ -71,7 +69,7 @@ const Post = (props) => {
             <div><img className="post-image" src={postComments.image} alt={postComments.title} ></img></div>
             <div className="comments-title">Comments</div>
             {postComments.associated_comments.map((comment) => (
-                <Comment key={comment.id} comment={comment} user={props.user}/>
+                <Comment key={comment.id} comment={comment} user={props.user} BASE_URL={props.BASE_URL}/>
             ))}
             <div className="comment-form">
             <form onSubmit={handleSubmit}>
