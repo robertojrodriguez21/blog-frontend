@@ -11,24 +11,25 @@ const UserProfile = (props) => {
     props.handleLogOut()
     navigate('/')
 }
-console.log(props.user)
 
   return (
     <div className="user">
       <div>
       <h1>Profile Information</h1>
       </div>
-      <div>
-      <h3>First Name: {props.user.firstName}</h3>
-      </div>
-      <div>
-      <h3>Last Name: {props.user.lastName}</h3>
-      </div>
-      <div>
-      <h3>Email: {props.user.email}</h3>
-      </div>
-      <div>
-      <h3>Location: {props.user.location}</h3>
+      <div className="center-column">
+        <div className="userProfile" id="align">
+          <h3 className="user">First Name: {props.user.firstName}</h3>
+        </div>
+        <div className="userProfile" id="align">
+          <h3 className="user">Last Name: {props.user.lastName}</h3>
+        </div>
+        <div className="userProfile" id="align">
+          <h3 className="user">Email: {props.user.email}</h3>
+        </div>
+        <div className="userProfile" id="align">
+          <h3 className="user">Location: {props.user.location}</h3>
+        </div>
       </div>
       <div>
       <button className='delete-user-button' onClick={handleDelete}>Delete Account</button>
