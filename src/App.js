@@ -4,6 +4,7 @@ import Header from './components/Header'
 import MyBlog from './components/MyBlog'
 import Login from './components/Login'
 import Register from './components/Register'
+import UserProfile from './components/UserProfile'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import CreatePost from './components/CreatePost'
 import { useEffect, useState } from 'react'
@@ -94,6 +95,16 @@ function App() {
               />
             }
           />
+          <Route
+            path="/userProfile"
+            element={
+              <UserProfile
+                user={user}
+                BASE_URL={BASE_URL}
+                handleLogOut={handleLogOut}
+              />
+            }
+          />
           <Route path="/register" element={<Register />} />
           <Route
             path="/createPost"
@@ -141,6 +152,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/createPost" element={<Home />} />
           <Route path="/myBlog" element={<Home />} />
+          <Route path="/userProfile" element={<Home />} />
           <Route path="/editPost/:postId" element={<Home />} />
           <Route path="/" element={<Home />} />
         </Routes>
