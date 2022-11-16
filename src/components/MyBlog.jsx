@@ -6,13 +6,10 @@ const postsComments = props.postsComments
 const user = props.user
 
 let postCounter = postsComments.length
-console.log('this is length', postCounter)
 
 const reducePostCounter = () => {
   postCounter -= 1
-  console.log(postCounter)
   if (postCounter === 0) {
-    console.log('hit')
     return <h1>Add a Post to See This Page!</h1>
   } 
 }
