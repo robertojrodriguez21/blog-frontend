@@ -16,13 +16,9 @@ const BASE_URL = 'http://localhost:3001/blog'
 
 function App() {
   const [postsComments, setPostsComments] = useState([])
-  const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
-  const handleChange = (event) => {
-    setNewPost({ ...newPost, [event.target.name]: event.target.value })
-  }
   // const handlePost = () => {
   //   let post = input
   //   setPost(post)
@@ -30,16 +26,10 @@ function App() {
   //   setInput('')
   // }
 
-  const createPost = async (e) => {
-    e.preventDefault()
-    const createdPost = {
-      ...newPost,
-      userId: user.id
-    }
-    await axios.post(`${BASE_URL}/post/create`, createdPost)
-
-    setNewPost({ title: '', body: '', image: '' })
-  }
+  // const handleEdit = async (id) => {
+  //   let newPost = await axios.put(`http://localhost:3001/${id}`, newPost)
+  //   setPostsComments([...postsComments], newPost.data)
+  // }
 
   const handleLogOut = () => {
     setUser(null)
@@ -47,22 +37,8 @@ function App() {
     localStorage.clear()
   }
 
-  const handleDelete = async (id, index) => {
-    id.preventDefault()
-    await axios.delete(`http://localhost:3001/${id}`, post)
-    let post = [...postsComments]
-    post.splice(index, 1)
-    setPostsComments(post)
-  }
-
-  const handleEdit = async (id) => {
-    let newPost = await axios.put(`http://localhost:3001/${id}`, newPost)
-    setPostsComments([...postsComments], newPost.data)
-  }
-
   const checkToken = async () => {
     const user = await CheckSession()
-    console.log(user, 'this is the user in the check token function')
     setUser(user)
     toggleAuthenticated(true)
   }
@@ -72,16 +48,18 @@ function App() {
     if (token) {
       checkToken()
     }
+  }, [])
 
+  useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get(`${BASE_URL}/postcomment/`)
       setPostsComments(response.data)
     }
+
     apiCall()
   }, [])
 
   return user && authenticated ? (
-
     <div className="App">
       <nav>
         <Header
@@ -105,29 +83,13 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route
             path="/createPost"
-            element={
-              <CreatePost
-                handlePostChange={handleChange}
-                createPost={createPost}
-                newPost={newPost}
-              />
-            }
+            element={<CreatePost BASE_URL={BASE_URL} user={user} />}
           />
-          <Route
-            path="/editPost"
-            element={
-              <EditPost
-                handleChange={handleChange}
-                handleEdit={handleEdit}
-                post={newPost}
-              />
-            }
-          />
+          <Route path="/editPost" element={<EditPost />} />
           <Route
             path="/"
             element={
               <Feed
-                handleDelete={handleDelete}
                 postsComments={postsComments}
                 authenticated={authenticated}
                 user={user}
@@ -135,7 +97,6 @@ function App() {
               />
             }
           />
-          <Route path="/post" element={<Post handleDelete={handleDelete} />} />
         </Routes>
       </main>
     </div>
@@ -164,7 +125,6 @@ function App() {
           <Route path="/createPost" element={<Home />} />
           <Route path="/editPost" element={<Home />} />
           <Route path="/" element={<Home />} />
-          <Route path="/post" element={<Post handleDelete={handleDelete} />} />
         </Routes>
       </main>
     </div>

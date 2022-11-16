@@ -5,6 +5,7 @@ import { useState } from "react"
 const Post = (props) => {
     const postComments = props.postComments
 
+    // Create new comment
     const [newComment, setNewComment] = useState({ comment: '' })
 
     const handleChange = (event) => {
@@ -29,6 +30,12 @@ const Post = (props) => {
         window.location.reload(false)
     }
 
+    // Edit post
+    const handleEdit = () => {
+        
+    }
+
+    // Delete post
     const handleDelete = async (e) => {
         e.preventDefault()
         await axios.delete(`${props.BASE_URL}/post/${postComments.id}`)
@@ -42,7 +49,7 @@ const Post = (props) => {
             <>
             <div className="post-title-bar">
                 <div><button className="delete-button" onClick={handleDelete}>X</button></div>
-                <div><button className="edit-button" onClick={''}>✎</button></div>
+                <div><button className="edit-button" onClick={handleEdit}>✎</button></div>
                 <div className="post-title">{postComments.title}</div>
             </div>
             </>
