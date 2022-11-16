@@ -132,6 +132,7 @@ function App() {
                 postsComments={postsComments}
                 authenticated={authenticated}
                 user={user}
+                BASE_URL={BASE_URL}
               />
             }
           />

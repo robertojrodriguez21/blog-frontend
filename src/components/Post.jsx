@@ -1,9 +1,37 @@
 import Comment from "./Comment"
+import axios from "axios"
+import { useState } from "react"
 
 const Post = (props) => {
     const postComments = props.postComments
+
+    const [newComment, setNewComment] = useState({ comment: '' })
+
+    const handleChange = (event) => {
+        setNewComment({ ...newComment, [event.target.name]: event.target.value })
+    }
+
+    const createComment = async (e) => {
+        e.preventDefault()
+        const createdComment = {
+            comment: newComment.comment,
+            userId: props.user.id,
+            postId: postComments.id
+        }
+        console.log(createdComment)
+        await axios.post(`${props.BASE_URL}/comment/create`, createdComment)
+
+        setNewComment({ comment: '' })
+    }
+    
     const handleSubmit = async (e) => {
-        await props.createPost(e)
+        await createComment(e)
+        window.location.reload(false)
+    }
+
+    const handleDelete = async (e) => {
+        e.preventDefault()
+        await axios.delete(`${props.BASE_URL}/post/${postComments.id}`)
         window.location.reload(false)
     }
 
@@ -13,7 +41,7 @@ const Post = (props) => {
         titleBar = (
             <>
             <div className="post-title-bar">
-                <div><button className="delete-button" onClick={props.handleDelete}>X</button></div>
+                <div><button className="delete-button" onClick={handleDelete}>X</button></div>
                 <div><button className="edit-button" onClick={''}>✎</button></div>
                 <div className="post-title">{postComments.title}</div>
             </div>
@@ -38,7 +66,7 @@ const Post = (props) => {
             ))}
             <div className="comment-form">
             <form onSubmit={handleSubmit}>
-                <textarea required type='text' placeholder="Add Comment"></textarea><br></br>
+                <textarea required type='text' placeholder="Add Comment" value={newComment.comment} onChange={handleChange} name={'comment'}></textarea><br></br>
                 <button className="post-comment-button">Post</button>
             </form>
             </div>
