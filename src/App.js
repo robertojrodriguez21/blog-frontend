@@ -140,6 +140,7 @@ function App() {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/createPost" element={<Home />} />
+          <Route path="/myBlog" element={<Home />} />
           <Route path="/editPost/:postId" element={<Home />} />
           <Route path="/" element={<Home />} />
         </Routes>
