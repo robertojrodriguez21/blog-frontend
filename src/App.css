@@ -40,7 +40,7 @@ nav {
 }
 
 /* Center */
-.create-post, .register, .login, .home, .edit-post {
+.create-post, .register, .login, .home, .edit-post, .post {
   width: 40%;
   margin: auto;
   padding: 20px 0;
@@ -57,7 +57,7 @@ nav {
 }
 
 /* Form Titles */
-.create-post-title, .register-title, .login-title, .home-title, .edit-post-title {
+.create-post-title, .register-title, .login-title, .home-title, .edit-post-title, .feed-title {
   background-color: darkslategray;
   font-size: 40px;
   font-weight: 700;
@@ -70,7 +70,6 @@ a, button {
   cursor: pointer;
 }
 
-/* Buttons */
 /* Create/Add Button */
 .create-post-button, .register-button, .login-button, .home-button, .edit-post-button {
   background-color: darkslategray;
@@ -79,16 +78,104 @@ a, button {
 
 .delete-button {
   background-color: darkred;
-  padding: 5px;
   font-weight: 900;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+}
+
+.delete-button:hover {
+  background-color: rgb(217, 45, 45);
+  font-weight: 900;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
 }
 
 .edit-button {
   background-color: darkorange;
-  padding: 5px;
   font-weight: 900;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+}
+
+.edit-button:hover {
+  background-color: rgb(250, 170, 72);
+  font-weight: 900;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+}
+
+/* Post */
+.post {
+  width: 600px;
+  background-color: rgb(42, 96, 96);
+  padding: 0;
+  margin-top: 15px;
+}
+.post-image {
+  max-width: 400px;
+  padding: 0 0 10px;
+}
+
+.post-title-bar {
+  display: flex;
+  background-color: darkslategray;
+}
+
+.post-title {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.post-body {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Comment Section in Post */
+.comments-title {
+  background-color: darkslategray;
+  text-align: left;
+  padding: 10px;
+}
+
+.comment-form {
+  text-align: left;
+}
+
+.comment-form textarea {
+  margin: 10px;
+  padding: 5px;
+  width: 60vh;
+  max-width: 570px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.post-comment-button {
+  background-color: darkslategray;
+  padding: 10px;
+  margin: 0 10px 10px;
+}
+
+/* Comments */
+.comment-block {
+  display: flex;
+  padding: 10px;
+}
+
+.comment {
+  padding: 0 0 0 10px;
+}
+
+/* Home */
+.home-divider {
+  padding: 10px;
+  font-weight: 700;
 }

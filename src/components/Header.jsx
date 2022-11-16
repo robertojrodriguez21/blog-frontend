@@ -6,8 +6,8 @@ const Header = ({ authenticated, user, handleLogOut }) => {
   if (user) {
     authenticatedOptions = (
       <>
-        <Link className="nav-link nav-title" to={'/'}><div >BLOG</div></Link>
-        <Link to="/feed"><div className='nav-link'>Feed</div></Link>
+        <div className="nav-link nav-title">BLOG</div>
+        <Link to="/"><div className='nav-link'>Feed</div></Link>
         <Link to="/createPost"><div className='nav-link'>Create Post</div></Link>
         <div className="nav-link right-align">Hello {user.firstName}!</div>
         <Link className='nav-link' onClick={handleLogOut} to="/"><div>Logout</div></Link>

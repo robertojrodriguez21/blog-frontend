@@ -1,8 +1,12 @@
-const CreatePost = (props) => {
+import { useNavigate } from "react-router-dom";
 
+const CreatePost = (props) => {
+    let navigate = useNavigate()
     // Create Post Function
     const handleSubmit = async (e) => {
         await props.createPost(e)
+        navigate('/')
+        window.location.reload(false)
     }
 
     const newPost = props.newPost
