@@ -1,6 +1,7 @@
 import './App.css'
 import Home from './components/Home'
 import Header from './components/Header'
+import MyBlog from './components/MyBlog'
 import Login from './components/Login'
 import Register from './components/Register'
 import { Route, Routes, useNavigate } from 'react-router-dom'
@@ -11,7 +12,10 @@ import Feed from './components/Feed'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
 
-const BASE_URL = 'http://localhost:3001/blog'
+const HEROKU_URL = 'https://radiant-earth-48941.herokuapp.com/blog'
+const LOCAL_URL = 'http://localhost:3001/blog'
+const BASE_URL =
+  process.env.NODE_ENV === 'blog_development' ? LOCAL_URL : HEROKU_URL
 
 function App() {
   const [postsComments, setPostsComments] = useState([])
@@ -124,6 +128,7 @@ function App() {
             }
           />
           <Route path="/register" element={<Register />} />
+          <Route path="/myBlog/:userId" element={<MyBlog />} />
           <Route path="/createPost" element={<Home />} />
           <Route path="/editPost/:postId" element={<Home />} />
           <Route path="/" element={<Home />} />
