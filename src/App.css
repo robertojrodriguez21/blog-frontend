@@ -183,7 +183,7 @@ a, button {
   margin: 0 0 0 10px;
 }
 
-.comment-delete-button:hover {
+.comment-delete-button:hover{
   background-color: rgb(217, 45, 45);
   font-weight: 900;
   padding: 2px 5px;
@@ -200,3 +200,37 @@ a, button {
   color: black;
   opacity: 1;
 }
+
+.userProfile {
+  display: grid;
+  grid-template-rows: 1fr, 1fr, 1fr ,1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: left;
+}
+
+.user {
+  grid-column: 2 /span 2;
+  padding-left: 90px;
+}
+
+.delete-user-button {
+  background-color:rgb(217, 45, 45);
+  font-weight: 900;
+  padding: 7px 7px;
+  margin: 0 0 15px 0;
+  opacity: 80%;
+}
+
+.delete-user-button:hover{
+  background-color:rgb(217, 45, 45);
+  font-weight: 900;
+  padding: 7px 7px;
+  margin: 0 0 15px 0;
+  opacity: 100%;
+  border-top: 2px solid gray;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gainsboro;
+  border-left: 2px solid gainsboro;
+}
+
+
