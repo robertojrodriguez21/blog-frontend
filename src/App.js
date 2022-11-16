@@ -83,6 +83,17 @@ function App() {
               />
             }
           />
+          <Route
+            path="/myBlog"
+            element={
+              <MyBlog
+                postsComments={postsComments}
+                user={user}
+                authenticated={authenticated}
+                BASE_URL={BASE_URL}
+              />
+            }
+          />
           <Route path="/register" element={<Register />} />
           <Route
             path="/createPost"
@@ -128,7 +139,6 @@ function App() {
             }
           />
           <Route path="/register" element={<Register />} />
-          <Route path="/myBlog/:userId" element={<MyBlog />} />
           <Route path="/createPost" element={<Home />} />
           <Route path="/editPost/:postId" element={<Home />} />
           <Route path="/" element={<Home />} />

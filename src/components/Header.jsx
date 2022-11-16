@@ -5,9 +5,6 @@ const Header = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
   let navigate = useNavigate()
 
-  const handleMyBlog = (e) => {
-    navigate(`/myBlog/${user.id}`)
-}
 
   if (user) {
     authenticatedOptions = (
@@ -15,7 +12,7 @@ const Header = ({ authenticated, user, handleLogOut }) => {
         <Link to='/' className="nav-link nav-title"><div>BLOG</div></Link>
         <Link to="/createPost"><div className='nav-link'>Create Post</div></Link>
         <div className="nav-link right-align">Hello {user.firstName}!</div>
-        <Link className='nav-link' onClick={handleMyBlog}><div>My Blog</div></Link>
+        <Link className='nav-link' to="/myBlog"><div>My Blog</div></Link>
         <Link className='nav-link' onClick={handleLogOut} to="/"><div>Logout</div></Link>
       </>
     )
