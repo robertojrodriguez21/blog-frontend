@@ -168,11 +168,26 @@ a, button {
 .comment-block {
   display: flex;
   padding: 10px;
+  align-items: center;
 }
 
 .comment {
   padding: 0 0 0 10px;
   text-align: left;
+}
+
+.comment-delete-button {
+  background-color: darkred;
+  font-weight: 900;
+  padding: 2px 5px;
+  margin: 0 0 0 10px;
+}
+
+.comment-delete-button:hover {
+  background-color: rgb(217, 45, 45);
+  font-weight: 900;
+  padding: 2px 5px;
+  margin: 0 0 0 10px;
 }
 
 /* Home */
