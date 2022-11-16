@@ -1,9 +1,11 @@
 import Comment from "./Comment"
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 const Post = (props) => {
     const postComments = props.postComments
+    let navigate = useNavigate()
 
     // Create new comment
     const [newComment, setNewComment] = useState({ comment: '' })
@@ -32,7 +34,7 @@ const Post = (props) => {
 
     // Edit post
     const handleEdit = () => {
-        
+        navigate(`/editPost/${postComments.id}`)
     }
 
     // Delete post

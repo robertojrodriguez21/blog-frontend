@@ -10,7 +10,6 @@ import EditPost from './components/EditPost'
 import Feed from './components/Feed'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
-import Post from './components/Post'
 
 const BASE_URL = 'http://localhost:3001/blog'
 
@@ -85,7 +84,10 @@ function App() {
             path="/createPost"
             element={<CreatePost BASE_URL={BASE_URL} user={user} />}
           />
-          <Route path="/editPost" element={<EditPost />} />
+          <Route
+            path="/editPost/:postId"
+            element={<EditPost BASE_URL={BASE_URL} />}
+          />
           <Route
             path="/"
             element={
@@ -123,7 +125,7 @@ function App() {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/createPost" element={<Home />} />
-          <Route path="/editPost" element={<Home />} />
+          <Route path="/editPost/:postId" element={<Home />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
