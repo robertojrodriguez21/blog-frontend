@@ -56,24 +56,27 @@ const Post = (props) => {
         )
     }
 
+    console.log(postComments)
+
     let publicTitleBar = (
         <div className="post-title-bar">
             <div className="post-title">{postComments.title}</div>
         </div>
     )
-
+    
+    
     return(
         <div className="post">
             {props.user.id === props.postUserId ? titleBar : publicTitleBar}
             <div className="post-body">{postComments.body}</div>
-            <div><img className="post-image" src={postComments.image} alt={postComments.title} ></img></div>
+            {postComments.image !== '' ? <div><img className="post-image" src={postComments.image} alt={postComments.title} ></img></div> : null}
             <div className="comments-title">Comments</div>
             {postComments.associated_comments.map((comment) => (
                 <Comment key={comment.id} comment={comment} user={props.user} BASE_URL={props.BASE_URL}/>
             ))}
             <div className="comment-form">
             <form onSubmit={handleSubmit}>
-                <textarea required type='text' placeholder="Add Comment" value={newComment.comment} onChange={handleChange} name={'comment'}></textarea><br></br>
+                <textarea className="commentTextBox" required type='text' placeholder="Add Comment" value={newComment.comment} onChange={handleChange} name={'comment'}></textarea><br></br>
                 <button className="post-comment-button">Post</button>
             </form>
             </div>

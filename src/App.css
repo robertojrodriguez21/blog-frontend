@@ -76,6 +76,15 @@ a, button {
   padding: 10px;
 }
 
+.create-post-button:hover, .register-button:hover, .login-button:hover, .home-button:hover, .edit-post-button:hover {
+  background-color: #74c365;
+  border-top: 2px solid gray;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gainsboro;
+  border-left: 2px solid gainsboro;
+  padding: 10px;
+}
+
 .delete-button {
   background-color: darkred;
   font-weight: 900;
@@ -114,6 +123,7 @@ a, button {
   background-color: rgb(42, 96, 96);
   padding: 0;
   margin-top: 15px;
+  border-radius: 15px;
 }
 .post-image {
   max-width: 400px;
@@ -164,6 +174,16 @@ a, button {
   margin: 0 10px 10px;
 }
 
+.post-comment-button:hover {
+  background-color: #74c365;
+  border-top: 2px solid gray;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gainsboro;
+  border-left: 2px solid gainsboro;
+  padding: 10px;
+  margin: 0 10px 10px;
+}
+
 /* Comments */
 .comment-block {
   display: flex;
@@ -171,9 +191,16 @@ a, button {
   align-items: center;
 }
 
+.commentTextBox {
+  border-radius: 15px;
+}
+
 .comment {
-  padding: 0 0 0 10px;
+  padding: 10px;
   text-align: left;
+  background-color: #3cb371;
+  border-radius: 15px;
+  margin-left: 10px;
 }
 
 .comment-delete-button {
@@ -231,6 +258,11 @@ a, button {
   border-right: 2px solid gray;
   border-bottom: 2px solid gainsboro;
   border-left: 2px solid gainsboro;
+}
+
+.postText {
+  height: 100px;
+  width: 200px;
 }
 
 
