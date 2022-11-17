@@ -67,6 +67,7 @@ const Post = (props) => {
     
     return(
         <div className="post">
+            <div className="post-div">
             {props.user.id === props.postUserId ? titleBar : publicTitleBar}
             <div className="post-body">{postComments.body}</div>
             {postComments.image !== '' ? <div><img className="post-image" src={postComments.image} alt={postComments.title} ></img></div> : null}
@@ -77,8 +78,9 @@ const Post = (props) => {
             <div className="comment-form">
             <form onSubmit={handleSubmit}>
                 <textarea className="commentTextBox" required type='text' placeholder="Add Comment" value={newComment.comment} onChange={handleChange} name={'comment'}></textarea><br></br>
-                <button className="post-comment-button">Post</button>
+                <button className="post-comment-button">Comment</button>
             </form>
+            </div>
             </div>
         </div>
     )

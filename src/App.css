@@ -133,6 +133,11 @@ a, button {
 .post-title-bar {
   display: flex;
   background-color: darkslategray;
+  border-radius: 15px 15px 0 0 ;
+}
+
+.post-button-div {
+  border-top: 5px solid rgb(53, 87, 87);
 }
 
 .post-title {
@@ -171,7 +176,7 @@ a, button {
 .post-comment-button {
   background-color: darkslategray;
   padding: 10px;
-  margin: 0 10px 10px;
+  margin: 10px;
 }
 
 .post-comment-button:hover {
@@ -181,7 +186,11 @@ a, button {
   border-bottom: 2px solid gainsboro;
   border-left: 2px solid gainsboro;
   padding: 10px;
-  margin: 0 10px 10px;
+  margin: 10px;
+}
+
+.post-div{
+  border-radius: 15px;
 }
 
 /* Comments */
