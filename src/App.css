@@ -9,7 +9,9 @@ html {
 button {
 cursor: pointer;
 }
-
+.profile-font{
+  color:rgb(27, 73, 73);
+}
 /* Nav Bar */
 nav {
   display: flex;
@@ -19,7 +21,6 @@ nav {
   position: sticky;
   top: 0;
 }
-
 .nav-link {
   padding: 20px;
 }
