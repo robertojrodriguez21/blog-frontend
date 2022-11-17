@@ -59,6 +59,7 @@ nav {
 .create-post-form {
   background-color: rgb(42, 96, 96);
   padding: 10px;
+  border-radius: 0 0 15px 15px;
 }
 
 .create-post-form label {
