@@ -35,13 +35,11 @@ const CreatePost = (props) => {
             <form className='create-post-form' onSubmit={handleSubmit}>
                 <label>Title: </label>
                 <input required type='text' value={newPost.title} onChange={handleChange} name={'title'}></input>
-                <br></br><br></br>
-                <label>Post: </label>
-                <input className="postText" required type='text' value={newPost.body} onChange={handleChange} name={'body'}></input>
-                <br></br><br></br>
-                <label>Post Image Link: </label>
+                <label>Image Link: </label>
                 <input type='text' value={newPost.image} onChange={handleChange} name={'image'} placeholder={'Optional'}></input>
-                <br></br><br></br>
+                <br></br>
+                <textarea className="postText" required type='text' value={newPost.body} onChange={handleChange} name={'body'} placeholder={'Add post here'}></textarea>
+                <br></br>
                 <button className='create-post-button'>Create Post</button>
             </form>
         </div>

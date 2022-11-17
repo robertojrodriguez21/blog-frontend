@@ -14,7 +14,6 @@ const Header = ({ authenticated, user, handleLogOut }) => {
     authenticatedOptions = (
       <>
         <div onClick={blogTitleClick} className="nav-link nav-title">BLOG</div>
-        <Link to="/createPost"><div className='nav-link'>Create Post</div></Link>
         <Link className="nav-link right-align" to="/userProfile"><div>Hello {user.firstName}!</div></Link>
         <Link className='nav-link' to="/myBlog"><div>My Blog</div></Link>
         <Link className='nav-link' onClick={handleLogOut} to="/"><div>Logout</div></Link>
