@@ -19,23 +19,20 @@ const UserProfile = (props) => {
       </div>
       <div className="center-column">
         <div className="userProfile" id="align">
-          <h3 className="user">First Name: {props.user.firstName}</h3>
+          <h3 className="user">First Name: <span className="profile-font">{props.user.firstName}</span></h3>
         </div>
         <div className="userProfile" id="align">
-          <h3 className="user">Last Name: {props.user.lastName}</h3>
+          <h3 className="user">Last Name: <span className="profile-font">{props.user.lastName}</span></h3>
         </div>
         <div className="userProfile" id="align">
-          <h3 className="user">Email: {props.user.email}</h3>
+          <h3 className="user">Email: <span className="profile-font">{props.user.email}</span></h3>
         </div>
         <div className="userProfile" id="align">
-          <h3 className="user">Location: {props.user.location}</h3>
+          {props.user.location !== '' ? <h3 className="user">Location: <span className="profile-font">{props.user.location}</span></h3>: null}
         </div>
       </div>
       <div>
       <button className='delete-user-button' onClick={handleDelete}>Delete Account</button>
-      </div>
-      <div>
-      <button className='update-password-button'>Update Password</button>
       </div>
     </div>
   )
