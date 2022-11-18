@@ -28,7 +28,7 @@ const UserProfile = (props) => {
           <h3 className="user"><span className="text">Email: </span> {props.user.email}</h3>
         </div>
         <div className="userProfile" id="align">
-          <h3 className="user"><span className="text">Location: </span> {props.user.location}</h3>
+          {props.user.location !== '' ? <h3 className="user"><span className="text">Location: </span> {props.user.location}</h3> : null}
         </div>
       </div>
       <div>
