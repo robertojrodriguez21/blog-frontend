@@ -6,16 +6,23 @@
 
 ## **_Description_**
 
+Our web app was focused around having a personal blog. Every member of our group uses a type of blog for one thing or another. Whether it is for workout logs, or a scrapbook for their kids. So we created a web app that can be all-encompassing to suit everyone's needs.
+
 ## **_How to Get Started_**
+
+When on the home page, click the "register" button. Input your information on the page. After you register, you will be taken to the login page. Login with your information and you will have access to the website!
 
 ### **_What you can expect..._**
 
-![Home Page]()
-![Feed]()
+![Register](https://i.imgur.com/zhsGB5Q.png)
+![Login](https://i.imgur.com/EgJXw7K.png)
+![Home Page](https://i.imgur.com/elHiGDU.png)
+![Feed](https://i.imgur.com/0Ru7eMD.png)
 
 ## **_Heroku Link_**
 
-[Heroku Link]()
+[Heroku Link - backend](https://radiant-earth-48941.herokuapp.com/)
+[Heroku Link - frontend](https://nameless-atoll-81684.herokuapp.com/)
 
 ## **_Component Hierarchy Diagram Link_**
 
