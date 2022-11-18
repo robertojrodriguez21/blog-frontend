@@ -24,7 +24,6 @@ nav {
 .nav-link {
   padding: 20px;
 }
-
 .nav-link:hover {
   background-color: rgb(27, 73, 73);
   cursor: pointer;
@@ -41,10 +40,19 @@ nav {
 }
 
 /* Center */
-.register, .login, .home, .edit-post, .post, .create-post {
+.register, .login, .edit-post, .post, .create-post {
   width: 40%;
   margin: auto;
   padding: 20px 0;
+}
+.home{
+  width: 600px;
+  background-color: rgb(42, 96, 96);
+  padding: 0;
+  margin:auto;
+  margin-top: 50px;
+  border-radius: 15px;
+  padding-bottom: 35px;
 }
 
 /* Form Backgrounds */
@@ -85,7 +93,12 @@ nav {
   font-weight: 700;
   padding: 10px;
 }
-
+.homepage-title{
+  background-color: darkslategray;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 15px;
+}
 /* Links and Buttons */
 a, button {
   all: unset;
@@ -93,18 +106,30 @@ a, button {
 }
 
 /* Create/Add Button */
-.create-post-button, .register-button, .login-button, .home-button, .edit-post-button {
+.create-post-button, .home-button, .edit-post-button {
   background-color: darkslategray;
   padding: 10px;
 }
-
-.create-post-button:hover, .register-button:hover, .login-button:hover, .home-button:hover, .edit-post-button:hover {
+.login-button, .register-button{
+  background-color: darkslategray;
+  padding: 10px 40px;
+}
+.login-button:hover, .register-button:hover{
   background-color: #74c365;
   border-top: 2px solid gray;
   border-right: 2px solid gray;
   border-bottom: 2px solid gainsboro;
   border-left: 2px solid gainsboro;
-  padding: 10px;
+  padding: 8px 40px;
+}
+
+.create-post-button:hover, .home-button:hover, .edit-post-button:hover {
+  background-color: #74c365;
+  border-top: 2px solid gray;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gainsboro;
+  border-left: 2px solid gainsboro;
+  padding: 8px;
 }
 
 .delete-button {
@@ -207,7 +232,7 @@ a, button {
   border-right: 2px solid gray;
   border-bottom: 2px solid gainsboro;
   border-left: 2px solid gainsboro;
-  padding: 10px;
+  padding: 8px;
   margin: 10px;
 }
 
