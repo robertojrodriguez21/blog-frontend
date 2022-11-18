@@ -16,7 +16,6 @@ const Comment = (props) => {
     if (props.user) {
         commentBar = (
             <div className="comment-block">
-                <div>{'➜'}</div>
                 <div><button className="comment-delete-button" onClick={handleDelete}>x</button></div>
                 <div className="comment">{comment.comment}</div>
             </div>
@@ -25,7 +24,6 @@ const Comment = (props) => {
 
     let publicCommentBar = (
         <div className="comment-block">
-            <div>{'➜'}</div>
             <div className="comment">{comment.comment}</div>
         </div>
     )

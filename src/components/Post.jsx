@@ -76,7 +76,7 @@ const Post = (props) => {
             ))}
             <div className="comment-form">
             <form onSubmit={handleSubmit}>
-                <textarea className="commentTextBox" required type='text' placeholder="Add Comment" value={newComment.comment} onChange={handleChange} name={'comment'}></textarea><br></br>
+                <textarea className="commentTextBox" required type='text' placeholder="Add Comment" value={newComment.comment} onChange={handleChange} name={'comment'}></textarea>
                 <button className="post-comment-button">Comment</button>
             </form>
             </div>
