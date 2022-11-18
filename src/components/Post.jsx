@@ -6,15 +6,14 @@ import { useNavigate } from "react-router-dom";
 const Post = (props) => {
     const postComments = props.postComments
     let navigate = useNavigate()
-
-    // Create new comment
     const [newComment, setNewComment] = useState({ comment: '' })
 
+    // Handles input change
     const handleChange = (event) => {
         setNewComment({ ...newComment, [event.target.name]: event.target.value })
     }
 
-
+    // Create new comment
     const createComment = async (e) => {
         e.preventDefault()
         let completeComment = props.user.firstName + ' ' + props.user.lastName + ': ' + newComment.comment
@@ -28,6 +27,7 @@ const Post = (props) => {
         setNewComment({ comment: '' })
     }
     
+    // Handles form submit
     const handleSubmit = async (e) => {
         await createComment(e)
         window.location.reload(false)
@@ -45,6 +45,7 @@ const Post = (props) => {
         window.location.reload(false)
     }
 
+    // Set title bar type: If user own post they can edit and delete, if not owner they can only view title
     let titleBar
 
     if (props.user) {
@@ -63,7 +64,7 @@ const Post = (props) => {
         </div>
     )
     
-    
+    // Return
     return(
         <div className="post">
             <div className="post-div">

@@ -13,6 +13,7 @@ import Feed from './components/Feed'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
 
+// Sets backend url
 const HEROKU_URL = 'https://radiant-earth-48941.herokuapp.com/blog'
 const LOCAL_URL = 'http://localhost:3001/blog'
 const BASE_URL =
@@ -23,18 +24,21 @@ function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
+  // Logout function
   const handleLogOut = () => {
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
   }
 
+  // Checks for user using token
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
     toggleAuthenticated(true)
   }
 
+  // Gets token from browser
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -42,6 +46,7 @@ function App() {
     }
   }, [])
 
+  // Sets all post with its associated comments
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get(`${BASE_URL}/postcomment/`)
@@ -51,7 +56,9 @@ function App() {
     apiCall()
   }, [])
 
+  // Return
   return user && authenticated ? (
+    // Page for logged in users
     <div className="App">
       <nav>
         <Header
@@ -117,6 +124,7 @@ function App() {
       </main>
     </div>
   ) : (
+    // Page for users that aren't logged in
     <div className="App">
       <nav>
         <Header

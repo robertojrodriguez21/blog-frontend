@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 
-
 const Home = () => {
   let navigate = useNavigate()
+
+  // Return
   return (
     <div className="home">
         <div>
@@ -11,7 +12,6 @@ const Home = () => {
           <div className='home-divider'>or</div>
           <button className='register-button' onClick={() => navigate('/register')}>Register</button>
         </div>
-
     </div>
   )
 }

@@ -3,15 +3,15 @@ import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 const Login = (props) => {
-
     const [formValues, setFormValues] = useState({ email: '', password: ''})
-
     let navigate = useNavigate()
 
+    // Handles input change
     const handleChange = (e) => {
         setFormValues({...formValues, [e.target.name]: e.target.value})
     }
 
+    // Handles form submit
     const handleSubmit = async (e) => {
         e.preventDefault()
         const payload = await SignInUser(formValues)
@@ -21,6 +21,7 @@ const Login = (props) => {
         navigate('/')
     }
 
+    //Return
     return(
         <div className="login">
             <div className="login-title">Login</div>

@@ -4,13 +4,14 @@ const Comment = (props) => {
     const comment = props.comment
     const user = props.user
 
-    // Delete post
+    // Delete comment
     const handleDelete = async (e) => {
         e.preventDefault()
         await axios.delete(`${props.BASE_URL}/comment/${comment.id}`)
         window.location.reload(false)
     }
 
+    // Set comment type; If your comment you can delete comment and if its not yours you can only see the comment
     let commentBar
 
     if (props.user) {
@@ -28,6 +29,7 @@ const Comment = (props) => {
         </div>
     )
 
+    // Return
     return (
         user.id === comment.userId ? commentBar : publicCommentBar
     )

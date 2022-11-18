@@ -4,6 +4,7 @@ import axios from "axios";
 
 const CreatePost = (props) => {
     let navigate = useNavigate()
+    const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
 
     // Create Post Function
     const handleSubmit = async (e) => {
@@ -12,12 +13,12 @@ const CreatePost = (props) => {
         window.location.reload(false)
     }
 
-    const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
-
+    // Handles input change
     const handleChange = (event) => {
         setNewPost({ ...newPost, [event.target.name]: event.target.value })
     }
 
+    // Creates new post
     const createPost = async (e) => {
         e.preventDefault()
         const createdPost = {
@@ -29,6 +30,7 @@ const CreatePost = (props) => {
         setNewPost({ title: '', body: '', image: '' })
     }
 
+    // Return
     return (
         <div className="create-post">
             <div className="create-post-title">Create Post</div>

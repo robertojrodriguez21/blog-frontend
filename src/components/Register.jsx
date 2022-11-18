@@ -5,6 +5,7 @@ import { RegisterUser } from '../services/Auth'
 
 
 const Register = () => {
+    let navigate = useNavigate()
     const [formValues, setFormValues] = useState( { 
         firstName: '',
         lastName: '', 
@@ -15,12 +16,13 @@ const Register = () => {
         }
     )
 
+    // Handles input change
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
     }
 
-    let navigate = useNavigate()
 
+    // Submits new user
     const handleSubmit = async (e) => {
         e.preventDefault()
         await RegisterUser({
