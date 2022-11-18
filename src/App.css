@@ -287,14 +287,22 @@ a, button {
 
 .userProfile {
   display: grid;
-  grid-template-rows: 1fr, 1fr, 1fr ,1fr;
+  grid-template-rows: 1fr, 1fr, 1fr ,1fr, 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: left;
 }
 
 .user {
   grid-column: 2 /span 2;
-  padding-left: 90px;
+}
+
+#profile-header {
+  border-bottom: 3px solid darkslategray;
+}
+
+.text {
+  color:rgb(57, 164, 135);
+  font-weight: lighter;
 }
 
 .delete-user-button {
@@ -303,6 +311,7 @@ a, button {
   padding: 7px 7px;
   margin: 0 0 15px 0;
   opacity: 80%;
+  margin-top: 50px;
 }
 
 .delete-user-button:hover{
@@ -315,5 +324,6 @@ a, button {
   border-right: 2px solid gray;
   border-bottom: 2px solid gainsboro;
   border-left: 2px solid gainsboro;
+  margin-top: 50px;
 }
 
