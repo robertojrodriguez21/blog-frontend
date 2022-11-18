@@ -14,6 +14,7 @@ const Post = (props) => {
         setNewComment({ ...newComment, [event.target.name]: event.target.value })
     }
 
+
     const createComment = async (e) => {
         e.preventDefault()
         let completeComment = props.user.firstName + ' ' + props.user.lastName + ': ' + newComment.comment
@@ -55,8 +56,6 @@ const Post = (props) => {
             </div>
         )
     }
-
-    console.log(postComments)
 
     let publicTitleBar = (
         <div className="post-title-bar">
