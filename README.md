@@ -2,7 +2,19 @@
 
 ## Due Date: 18 November 2022
 
-### By: Erwin Ortiz, Roberto Rodriguez, Edward Yuabov, and Kyle Davis
+### By:
+
+1. Erwin Ortiz
+   [LinkedIn](https://www.linkedin.com/in/erwin-e-ortiz/)
+
+2. Roberto Rodriguez
+   [LinkedIn](https://www.linkedin.com/in/rob-jes-rod/)
+
+3. Edward Yuabov
+   [LinkedIn](https://www.linkedin.com/in/edward-yuabov/)
+
+4. Kyle Davis
+   [LinkedIn](https://www.linkedin.com/in/kyle-davis-c/)
 
 ## **_Description_**
 
@@ -16,8 +28,24 @@ When on the home page, click the "register" button. Input your information on th
 
 ![Register](https://i.imgur.com/zhsGB5Q.png)
 ![Login](https://i.imgur.com/EgJXw7K.png)
-![Home Page](https://i.imgur.com/elHiGDU.png)
 ![Feed](https://i.imgur.com/0Ru7eMD.png)
+
+### **_Technologies Used_**
+
+1. PostgreSQL
+2. Express
+3. React
+4. Node.js
+5. Markdown
+6. Heroku
+7. GitHub
+
+## **_Future Updates_**
+
+1. Arrange the post feed by creation date.
+2. Add a public/private feature for posts.
+3. Add a calendar and color code each posts by topic.
+4. Add an update password feature to the user profile.
 
 ## **_Heroku Link_**
 
