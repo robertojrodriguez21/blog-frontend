@@ -46,6 +46,13 @@ footer {
   background-color: rgb(35, 44, 44);
   padding: 5px;
   margin: 15px 0 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.feed-container {
+  padding: 0 0 40px;
 }
 
 /* Center */
@@ -54,6 +61,7 @@ footer {
   margin: auto;
   padding: 20px 0;
 }
+
 .home{
   width: 600px;
   background-color: rgb(42, 96, 96);
