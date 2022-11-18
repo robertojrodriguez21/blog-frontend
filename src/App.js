@@ -122,6 +122,7 @@ function App() {
           />
         </Routes>
       </main>
+      <footer>Blog 2022</footer>
     </div>
   ) : (
     // Page for users that aren't logged in
