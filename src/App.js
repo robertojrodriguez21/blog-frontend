@@ -122,7 +122,15 @@ function App() {
           />
         </Routes>
       </main>
-      <footer>Blog 2022</footer>
+      <footer>
+        Blog 2022 |{' '}
+        <a
+          href="https://github.com/robertojrodriguez21/blog-frontend"
+          target="_blank"
+        >
+          Github
+        </a>
+      </footer>
     </div>
   ) : (
     // Page for users that aren't logged in
@@ -154,6 +162,15 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
+      <footer>
+        Blog 2022 |{' '}
+        <a
+          href="https://github.com/robertojrodriguez21/blog-frontend"
+          target="_blank"
+        >
+          Github
+        </a>
+      </footer>
     </div>
   )
 }
