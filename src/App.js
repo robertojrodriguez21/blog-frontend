@@ -5,7 +5,7 @@ import MyBlog from './components/MyBlog'
 import Login from './components/Login'
 import Register from './components/Register'
 import UserProfile from './components/UserProfile'
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import CreatePost from './components/CreatePost'
 import { useEffect, useState } from 'react'
 import EditPost from './components/EditPost'
@@ -22,18 +22,6 @@ function App() {
   const [postsComments, setPostsComments] = useState([])
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-
-  // const handlePost = () => {
-  //   let post = input
-  //   setPost(post)
-  //   setPostsComments(...postsComments, post)
-  //   setInput('')
-  // }
-
-  // const handleEdit = async (id) => {
-  //   let newPost = await axios.put(`http://localhost:3001/${id}`, newPost)
-  //   setPostsComments([...postsComments], newPost.data)
-  // }
 
   const handleLogOut = () => {
     setUser(null)
