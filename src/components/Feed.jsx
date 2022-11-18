@@ -4,7 +4,7 @@ import CreatePost from './CreatePost'
 const Feed = (props) => {
     const postsComments = props.postsComments
 
-
+    // Return
     return (
         <div>
             <CreatePost user={props.user} BASE_URL={props.BASE_URL} />

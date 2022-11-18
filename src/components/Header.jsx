@@ -5,11 +5,13 @@ const Header = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
   let navigate = useNavigate()
 
+  // IF Blog title clicked directs to feed and page is refreshed
   const blogTitleClick = () => {
     navigate('/')
     window.location.reload(false)
   }
 
+  // Sets navbar depending if user is logged in or not logged in
   if (user) {
     authenticatedOptions = (
       <>
@@ -29,11 +31,11 @@ const Header = ({ authenticated, user, handleLogOut }) => {
     </>
   )
 
+  //Return
   return (
     <>
       {authenticated && user ? authenticatedOptions : publicOptions}
     </>
-
   )
 }
 

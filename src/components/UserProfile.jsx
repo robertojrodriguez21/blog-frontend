@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const UserProfile = (props) => {
   let navigate = useNavigate()
 
+  // Deletes user
   const handleDelete = async (e) => {
     e.preventDefault()
     await axios.delete(`${props.BASE_URL}/user/${props.user.id}`)

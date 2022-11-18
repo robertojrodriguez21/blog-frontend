@@ -6,8 +6,9 @@ const EditPost = (props) => {
     let navigate = useNavigate()
     let {postId} = useParams()
     const [post, setPost] = useState({})
+    const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
     
-
+    // Retrieves specific post 
     useEffect(() => {
         const getPost = async () => {
             const response = await axios.get(`${props.BASE_URL}/post/${postId}`)
@@ -16,20 +17,19 @@ const EditPost = (props) => {
         getPost()
     }, [])
 
-    
-
+    // Handles form submit
     const handleSubmit = async (e) => {
         await editPost(e)
         navigate('/')
         window.location.reload(false)
     }
 
-    const [newPost, setNewPost] = useState({ title: '', body: '', image: '' })
-
+    // Handles input change
     const handleChange = (event) => {
         setNewPost({ ...newPost, [event.target.name]: event.target.value })
     }
 
+    // Submits edit post
     const editPost = async (e) => {
         e.preventDefault()
         let title, body, image
@@ -63,6 +63,7 @@ const EditPost = (props) => {
         setNewPost({ title: '', body: '', image: '' })
     }
 
+    // Return
     return(
         <div className="edit-post"> 
             <div className="edit-post-title">Edit Post</div>
